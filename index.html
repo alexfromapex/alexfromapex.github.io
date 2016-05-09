@@ -16,12 +16,27 @@
             body {
                 padding-bottom: 20px;
             }
-            .jumbotron {
-            	background-size:cover;
-            	background-image:url('https://media.licdn.com/media/p/2/005/0b8/0ed/184350d.jpg');
-            	background-repeat:no-repeat;
-            	background-position:center bottom;
-            }
+            @media screen and (min-width:1024px) {
+				.jumbotron {
+					background-size:cover;
+					background-image:url('https://media.licdn.com/media/p/2/005/0b8/0ed/184350d.jpg');
+					background-repeat:no-repeat;
+					background-position:center bottom;
+				}
+        	}
+            @media screen and (max-width:1023px) {
+				.jumbotron {
+					background-size:cover;
+					background-image:url('https://media.licdn.com/media/p/2/005/0b8/0ed/184350d.jpg');
+					background-repeat:no-repeat;
+					background-position:center;
+					color:white;
+				}
+				.jumbotron h1 {
+					background-color:rgba(0,0,0,0.5);
+				}
+        	}
+
         </style>
         <link rel="stylesheet" href="css/bootstrap-theme.min.css">
         <link rel="stylesheet" href="css/main.css">
@@ -45,12 +60,12 @@
       <div class="row">
         <div class="col-md-4">
           <h2>Adobe Target API NodeJS Server</h2>
-          <p>As part of our internal initiative to increase our efficiency, I saw great value in creating a piece of software that would allow easy communication, automation, and interaction with Adobe Target, one of the primary tools in our business.  I used NodeJS and ExpressJS to create a web application that would authenticate via JSON Web Tokens.  The authentication mechanism was the most complicated hurdle in getting API access and using this web application to authenticate allows our team to focus on API applications.</p>
+          <p>As part of our internal initiative to increase Brooks Bell's efficiency, I saw great value in creating a piece of software that would allow easy communication, automation, and interaction with Adobe Target, one of the primary tools in the day-to-day business.  I used NodeJS and ExpressJS to create a web application that would authenticate via JSON Web Tokens.  The authentication mechanism is handled by the web application, allowing our team to quickly and easily utilize the API via numerous pieces of software.</p>
           <p><a class="btn btn-default" href="./img/target-api-screen.PNG" role="button">View details &raquo;</a></p>
         </div>
         <div class="col-md-4">
           <h2>Click Summit Conference Microsite</h2>
-          <p>Serving as our dedicated internal marketing developer, I was commissioned by Brooks Bell's marketing team to create a modern website to better reflect the cutting-edge, revolutionary nature of our annual Click Summit conference.  The marketing team's requirements included building the front-end site, making it responsive, integrating it with WordPress, and making all content easily updateable, without the use of via the built-in WordPress user interfaces.</p>
+          <p>Serving as our dedicated internal marketing developer, I was commissioned by Brooks Bell's marketing team to create a modern website to better reflect the cutting-edge, revolutionary nature of our annual Click Summit conference.  The marketing team's requirements included building the front-end site, making it responsive, integrating it with WordPress, and making all content easily updateable for team members without coding backgrounds, via the built-in WordPress user interfaces.</p>
           <p><a class="btn btn-default" href="//www.brooksbell.com/click" role="button">View Site &raquo;</a></p>
        </div>
         <div class="col-md-4">
