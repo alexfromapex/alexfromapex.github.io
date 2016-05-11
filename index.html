@@ -16,15 +16,15 @@
             body {
                 padding-bottom: 20px;
             }
-            @media all and (min-width:401px) {
-			.margin {
-				background-color: white;
-				background-repeat: repeat;
-				padding:10px 20px;
-				box-shadow:0 10px 10px rgba(0,0,0,0.4);
-				position:relative;
-				min-height:450px;
-			}
+            @media all and (min-width:801px) {
+				.margin {
+					background-color: white;
+					background-repeat: repeat;
+					padding:10px 20px;
+					box-shadow:0 10px 10px rgba(0,0,0,0.4);
+					position:relative;
+					min-height:450px;
+				}
 				.jumbotron {
 					background-size:100%;
 					background-image:url('./img/alex2.jpg');
@@ -41,6 +41,7 @@
 				.col-md-4 {
 					position:relative;
 					top:-100px;
+					margin-bottom:20px;
 				}
 				.col-md-4 .btn {
 					position:absolute;
@@ -48,9 +49,9 @@
 					right:30px;
 				}
         	}
-            @media all and (max-width:400px) {
+            @media all and (max-width:800px) {
 				.jumbotron {
-					background-size:cover;
+					background-size:200%;
 					background-image:url('./img/alex2.jpg');
 					background-repeat:no-repeat;
 					background-position:center;
