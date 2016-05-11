@@ -16,18 +16,42 @@
             body {
                 padding-bottom: 20px;
             }
-            @media screen and (min-width:401px) {
+			.margin {
+				background-color: white;
+				background-repeat: repeat;
+				padding:10px 20px;
+				box-shadow:0 10px 10px rgba(0,0,0,0.4);
+				position:relative;
+				min-height:450px;
+			}
+            @media all and (min-width:401px) {
 				.jumbotron {
-					background-size:cover;
-					background-image:url('./img/alex.jpg');
+					background-size:100%;
+					background-image:url('./img/alex2.jpg');
 					background-repeat:no-repeat;
-					background-position:center bottom;
+					background-position:center 40%;
+					background-attachment:fixed;
+					height:600px;
+				}
+				.jumbotron h1 {
+					margin-top:90px;
+					color:#FFF;
+					text-shadow:0 0 3px rgba(0,0,0,0.5);
+				}
+				.col-md-4 {
+					position:relative;
+					top:-100px;
+				}
+				.col-md-4 .btn {
+					position:absolute;
+					bottom:20px;
+					right:30px;
 				}
         	}
-            @media screen and (max-width:400px) {
+            @media all and (max-width:400px) {
 				.jumbotron {
 					background-size:cover;
-					background-image:url('./img/alex.jpg');
+					background-image:url('./img/alex2.jpg');
 					background-repeat:no-repeat;
 					background-position:center;
 				}
@@ -58,23 +82,29 @@
 
     <div class="container">
       <!-- Example row of columns -->
-      <div class="row">
-        <div class="col-md-4">
-          <h2>Adobe Target API NodeJS Server</h2>
-          <p>As part of our internal initiative to increase Brooks Bell's efficiency, I saw great value in creating a piece of software that would allow easy communication, automation, and interaction with Adobe Target, one of the primary tools in the day-to-day business.  I used NodeJS and ExpressJS to create a web application that would authenticate via JSON Web Tokens.  The authentication mechanism is handled by the web application, allowing our team to quickly and easily utilize the API via numerous pieces of software.</p>
-          <p><a class="btn btn-default" href="./img/target-api-screen.PNG" role="button">View details &raquo;</a></p>
-        </div>
-        <div class="col-md-4">
-          <h2>Click Summit Conference Microsite</h2>
-          <p>Serving as our dedicated internal marketing developer, I was commissioned by Brooks Bell's marketing team to create a modern website to better reflect the cutting-edge, revolutionary nature of our annual Click Summit conference.  The marketing team's requirements included building the front-end site, making it responsive, integrating it with WordPress, and making all content easily updateable for team members without coding backgrounds, via the built-in WordPress user interfaces.</p>
-          <p><a class="btn btn-default" href="//www.brooksbell.com/click" role="button">View Site &raquo;</a></p>
-       </div>
-        <div class="col-md-4">
-          <h2>ImageJ Poster</h2>
-          <p>This is a poster I created and presented as a fellow at the National Institute of Environmental Health Sciences in Durham, NC.  As a fellow, I worked closely with the Laboratory of Signal Transduction to create plug-ins for a piece of software created by the National Institutes of Health called ImageJ.  The Java ImageJ Plug-ins added new capabilities for processing images that were created by various pieces of advanced microscope equipment, including confocal and laser-scanning microscopes.</p>
-          <p><a class="btn btn-default" href="https://drive.google.com/file/d/0B2PiLcLUQFInMDk2ZTRkY2ItNWJlZS00MTg2LThkMzctMmU5OWZiYzM1NjVj/edit" role="button">View Poster &raquo;</a></p>
-        </div>
-      </div>
+<div class="row">
+<div class="col-md-4">
+<div class="margin">
+<h2 class="text-center">Adobe Target API NodeJS Server</h2>
+<p>As part of our internal initiative to increase Brooks Bell's efficiency, I saw great value in creating a piece of software that would allow easy communication, automation, and interaction with Adobe Target, one of the primary tools in the day-to-day business.  I used NodeJS and ExpressJS to create a web application that would authenticate via JSON Web Tokens.  The authentication mechanism is handled by the web application, allowing our team to quickly and easily utilize the API via numerous pieces of software.</p>
+<p><a class="btn btn-default" href="./img/target-api-screen.PNG" role="button">View details &raquo;</a></p>
+</div>
+</div>
+<div class="col-md-4">
+<div class="margin">
+<h2 class="text-center">Click Summit Conference Microsite</h2>
+<p>Serving as our dedicated internal marketing developer, I was commissioned by Brooks Bell's marketing team to create a modern website to better reflect the cutting-edge, revolutionary nature of our annual Click Summit conference.  The marketing team's requirements included building the front-end site, making it responsive, integrating it with WordPress, and making all content easily updateable for team members without coding backgrounds, via the built-in WordPress user interfaces.</p>
+<p><a class="btn btn-default" href="//www.brooksbell.com/click" role="button">View Site &raquo;</a></p>
+</div>
+</div>
+<div class="col-md-4">
+<div class="margin">
+<h2 class="text-center">ImageJ Poster</h2>
+<p>This is a poster I created and presented as a fellow at the National Institute of Environmental Health Sciences in Durham, NC.  As a fellow, I worked closely with the Laboratory of Signal Transduction to create plug-ins for a piece of software created by the National Institutes of Health called ImageJ.  The Java ImageJ Plug-ins added new capabilities for processing images that were created by various pieces of advanced microscope equipment, including confocal and laser-scanning microscopes.</p>
+<p><a class="btn btn-default" href="https://drive.google.com/file/d/0B2PiLcLUQFInMDk2ZTRkY2ItNWJlZS00MTg2LThkMzctMmU5OWZiYzM1NjVj/edit" role="button">View Poster &raquo;</a></p>
+</div>
+</div>
+</div>
 
       <hr>
 
