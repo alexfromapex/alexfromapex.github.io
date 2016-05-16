@@ -34,7 +34,6 @@
 					height:600px;
 				}
 				.jumbotron h1 {
-					margin-top:90px;
 					color:#FFF;
 					text-shadow:0 0 3px rgba(0,0,0,0.5);
 				}
@@ -43,10 +42,19 @@
 					top:-100px;
 					margin-bottom:20px;
 				}
+				.jumbotron .col-md-4 {
+					position:static;
+					top:auto;
+					margin-bottom:0;
+				}
 				.col-md-4 .btn {
 					position:absolute;
 					bottom:20px;
 					right:30px;
+				}
+				.jumbotron .row {
+					position:relative;
+					top:150px;
 				}
         	}
             @media all and (max-width:800px) {
@@ -80,33 +88,74 @@
     <!-- Main jumbotron for a primary marketing message or call to action -->
     <div class="jumbotron">
       <div class="container">
-        <h1>Alex Watson's Portfolio</h1>
+      	<div class="row">
+          	<div class="col-md-1">
+        	</div>
+      		<div class="col-md-10 text-center">
+        		<h1>Alex Watson's Portfolio</h1>
+        	</div>
+          	<div class="col-md-1">
+        	</div>
+        </div>
+        <div class="row">
+          	<div class="col-md-4">
+        	</div>
+        	<div class="col-md-4">
+				<a href="http://stackexchange.com/users/1477537">
+					<img src="http://stackexchange.com/users/flair/1477537.png" width="208" height="58" alt="profile for Alex W on Stack Exchange, a network of free, community-driven Q&amp;A sites" title="profile for Alex W on Stack Exchange, a network of free, community-driven Q&amp;A sites" />
+				</a>
+        	</div>
+        	<div class="col-md-4">
+        		<a href="https://www.linkedin.com/pub/alex-watson/28/994/a39">
+          <img src="https://static.licdn.com/scds/common/u/img/webpromo/btn_viewmy_120x33.png" width="120" height="33" border="0" alt="View Alex Watson's profile on LinkedIn">
+        
+    </a>
+        	</div>
+        </div>
       </div>
     </div>
 
     <div class="container">
       <!-- Example row of columns -->
 <div class="row">
+	<div class="col-md-4">
+		<div class="margin">
+			<h2 class="text-center">Adobe Target API NodeJS Server</h2>
+			<p>As part of our internal initiative to increase Brooks Bell's efficiency, I saw great value in creating a piece of software that would allow easy communication, automation, and interaction with Adobe Target, one of the primary tools in the day-to-day business.  I used NodeJS and ExpressJS to create a web application that would authenticate via JSON Web Tokens.  The authentication mechanism is handled by the web application, allowing our team to quickly and easily utilize the API via numerous pieces of software.</p>
+			<p>
+				<a class="btn btn-default" href="./img/target-api-screen.PNG" role="button">View details &raquo;</a>
+			</p>
+		</div>
+	</div>
 <div class="col-md-4">
-<div class="margin">
-<h2 class="text-center">Adobe Target API NodeJS Server</h2>
-<p>As part of our internal initiative to increase Brooks Bell's efficiency, I saw great value in creating a piece of software that would allow easy communication, automation, and interaction with Adobe Target, one of the primary tools in the day-to-day business.  I used NodeJS and ExpressJS to create a web application that would authenticate via JSON Web Tokens.  The authentication mechanism is handled by the web application, allowing our team to quickly and easily utilize the API via numerous pieces of software.</p>
-<p><a class="btn btn-default" href="./img/target-api-screen.PNG" role="button">View details &raquo;</a></p>
-</div>
-</div>
-<div class="col-md-4">
-<div class="margin">
-<h2 class="text-center">Click Summit Conference Microsite</h2>
-<p>Serving as our dedicated internal marketing developer, I was commissioned by Brooks Bell's marketing team to create a modern website to better reflect the cutting-edge, revolutionary nature of our annual Click Summit conference.  The marketing team's requirements included building the front-end site, making it responsive, integrating it with WordPress, and making all content easily updateable for team members without coding backgrounds, via the built-in WordPress user interfaces.</p>
-<p><a class="btn btn-default" href="//www.brooksbell.com/click" role="button">View Site &raquo;</a></p>
-</div>
+	<div class="margin">
+		<h2 class="text-center">Click Summit Conference Microsite</h2>
+		<p>Serving as our dedicated internal marketing developer, I was commissioned by Brooks Bell's marketing team to create a modern website to better reflect the cutting-edge, revolutionary nature of our annual Click Summit conference.  The marketing team's requirements included building the front-end site, making it responsive, integrating it with WordPress, and making all content easily updateable for team members without coding backgrounds, via the built-in WordPress user interfaces.</p>
+		<p>
+			<a class="btn btn-default" href="//www.brooksbell.com/click" role="button">View Site &raquo;</a>
+		</p>
+	</div>
 </div>
 <div class="col-md-4">
-<div class="margin">
-<h2 class="text-center">ImageJ Poster</h2>
-<p>This is a poster I created and presented as a fellow at the National Institute of Environmental Health Sciences in Durham, NC.  As a fellow, I worked closely with the Laboratory of Signal Transduction to create plug-ins for a piece of software created by the National Institutes of Health called ImageJ.  The Java ImageJ Plug-ins added new capabilities for processing images that were created by various pieces of advanced microscope equipment, including confocal and laser-scanning microscopes.</p>
-<p><a class="btn btn-default" href="https://drive.google.com/file/d/0B2PiLcLUQFInMDk2ZTRkY2ItNWJlZS00MTg2LThkMzctMmU5OWZiYzM1NjVj/edit" role="button">View Poster &raquo;</a></p>
+	<div class="margin">
+		<h2 class="text-center">WebStats Chart Library</h2>
+		<p>As a hobby project, I have developed a JavaScript library that supports drawing different types of charts using the HTML canvas element. The library is capabale of generating responsive bar charts, pie charts, etc.</p>
+		<p><a class="btn btn-default" href="http://github.com/alex/fromapex/WebStats" role="button">View Poster &raquo;</a></p>
+	</div>
 </div>
+<div class="col-md-4">
+	<div class="margin">
+		<h2 class="text-center">Rebel CommonSpot Microsite</h2>
+		<p>As part of the Rebel 53 staff, I was tasked with creating a microsite in CommonSpot: the university's content management system. I was required to attend CommonSpot training in order to gain access to the CMS. This was the first time Rebel Magazine had its own page on the university's website. The microsite also has an <a href="http://www.ecu.edu/cs-studentaffairs/rebel/archive.cfm">archive</a> of all of the Rebel magazine covers going back to the early 70s. The site is still being utilized today by the most recent Rebel staff.</p>
+		<p><a class="btn btn-default" href="http://www.ecu.edu/cs-studentaffairs/rebel/index.cfm" role="button">View Poster &raquo;</a></p>
+	</div>
+</div>
+<div class="col-md-4">
+	<div class="margin">
+		<h2 class="text-center">ImageJ Poster</h2>
+		<p>This is a poster I created and presented as a Fellow at the National Institute of Environmental Health Sciences in Durham, NC.  As a fellow, I worked closely with the Laboratory of Signal Transduction to create plug-ins for a piece of software created by the National Institutes of Health called ImageJ.  The Java ImageJ Plug-ins added new capabilities for processing images that were created by various pieces of advanced microscope equipment, including confocal and laser-scanning microscopes.</p>
+		<p><a class="btn btn-default" href="https://drive.google.com/file/d/0B2PiLcLUQFInMDk2ZTRkY2ItNWJlZS00MTg2LThkMzctMmU5OWZiYzM1NjVj/edit" role="button">View Poster &raquo;</a></p>
+	</div>
 </div>
 </div>
 
