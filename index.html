@@ -16,6 +16,12 @@
             body {
                 padding-bottom: 20px;
             }
+            ul {
+            	list-style:none;
+            }
+           	ul.social li {
+           		margin-bottom:10px;
+           	}
             @media all and (min-width:801px) {
 				.margin {
 					background-color: white;
@@ -25,17 +31,57 @@
 					position:relative;
 					min-height:450px;
 				}
-				.jumbotron {
+				.jumbotron:before {
 					background-size:100%;
 					background-image:url('./img/alex2.jpg');
 					background-repeat:no-repeat;
 					background-position:center 40%;
 					background-attachment:fixed;
 					height:600px;
+					width:100%;
+					z-index:0;
+					content:' ';
+					position:absolute;
+					margin:0;
+					padding:0;
+				}
+				.jumbotron {
+					height:600px;
+					z-index:1;
+					width:100%;
+					background:transparent;
+					margin:0;
+					padding:0;
+				}
+				.jumbotron h1:before {
+					position:absolute;
+					left:0;
+					right:0;
+					top:50%;
+					transform:translateY(-50%);
+					margin-left:auto;
+					margin-right:auto;
+					width:100%;
+					height:100%;
+					display:block;
+					content:' ';
+					background:black;
+					background:transparent;
+					z-index:-1;
+					filter:progid:DXImageTransform.Microsoft.Blur(PixelRadius='3');
+					-webkit-filter:blur(3px);
+					filter:blur(3px);
+					padding:10px;
 				}
 				.jumbotron h1 {
 					color:#FFF;
-					text-shadow:0 0 3px rgba(0,0,0,0.5);
+					display:inline-block;
+					padding:15px;
+					z-index:5;
+					border-radius:5px;
+					position:relative;
+					margin:0;
+					padding:10px;
 				}
 				.col-md-4 {
 					position:relative;
@@ -97,27 +143,44 @@
           	<div class="col-md-1">
         	</div>
         </div>
-        <div class="row">
-          	<div class="col-md-4">
-        	</div>
-        	<div class="col-md-4">
-				<a href="http://stackexchange.com/users/1477537">
-					<img src="http://stackexchange.com/users/flair/1477537.png" width="208" height="58" alt="profile for Alex W on Stack Exchange, a network of free, community-driven Q&amp;A sites" title="profile for Alex W on Stack Exchange, a network of free, community-driven Q&amp;A sites" />
-				</a>
-        	</div>
-        	<div class="col-md-4">
-        		<a href="https://www.linkedin.com/pub/alex-watson/28/994/a39">
-          <img src="https://static.licdn.com/scds/common/u/img/webpromo/btn_viewmy_120x33.png" width="120" height="33" border="0" alt="View Alex Watson's profile on LinkedIn">
-        
-    </a>
-        	</div>
-        </div>
       </div>
     </div>
 
     <div class="container">
       <!-- Example row of columns -->
 <div class="row">
+	<div class="col-md-4">
+		<div class="margin">
+			<h2 class="text-center">Social</h2>
+			<ul class="social">
+				<li>
+					<h5>StackOverflow:</h5>
+					<a href="http://stackoverflow.com/users/1399491/alex-w">
+						<img src="http://stackoverflow.com/users/flair/1399491.png" width="208" height="58" alt="profile for Alex W at Stack Overflow, Q&amp;A for professional and enthusiast programmers" title="profile for Alex W at Stack Overflow, Q&amp;A for professional and enthusiast programmers">
+					</a>
+				</li>
+				<li>
+					<h5>StackExchange:</h5>
+					<a href="http://stackexchange.com/users/1477537">
+						<img src="http://stackexchange.com/users/flair/1477537.png" width="208" height="58" alt="profile for Alex W on Stack Exchange, a network of free, community-driven Q&amp;A sites" title="profile for Alex W on Stack Exchange, a network of free, community-driven Q&amp;A sites" />
+					</a>
+				</li>
+				<li>
+					<h5>LinkedIn:</h5>
+					<a href="https://www.linkedin.com/pub/alex-watson/28/994/a39">
+						<img src="https://static.licdn.com/scds/common/u/img/webpromo/btn_viewmy_120x33.png" width="120" height="33" border="0" alt="View Alex Watson's profile on LinkedIn">
+					</a>
+				</li>
+				<li>
+					<h5>QuizUp:</h5>
+					<a href="https://www.linkedin.com/pub/alex-watson/28/994/a39">
+						<img src="https://static.licdn.com/scds/common/u/img/webpromo/btn_viewmy_120x33.png" width="120" height="33" border="0" alt="View Alex Watson's profile on LinkedIn">
+					</a>
+				</li>
+
+			</ul>
+		</div>
+	</div>
 	<div class="col-md-4">
 		<div class="margin">
 			<h2 class="text-center">Adobe Target API NodeJS Server</h2>
