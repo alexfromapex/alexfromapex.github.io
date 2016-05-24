@@ -122,6 +122,24 @@
 				.col-md-4 {
 					margin: 50px 0;
 				}
+				ul.social li {
+					display:inline-block;
+					width:40%;
+				}
+				ul.social li:nth-child(even) {
+					margin-left:10px;
+				}
+        	}
+        	@media all and (max-width:989px) {
+				ul.social li {
+					display:inline-block;
+					width:45%;
+				}
+        	}
+        	@media all and (min-width:990px) {
+        		ul.social {
+        			padding-left: 10px;
+        		}
         	}
 
         </style>
@@ -160,26 +178,26 @@
 				<li>
 					<h5>StackOverflow:</h5>
 					<a href="http://stackoverflow.com/users/1399491/alex-w">
-						<img src="http://stackoverflow.com/users/flair/1399491.png" width="208" height="58" alt="profile for Alex W at Stack Overflow, Q&amp;A for professional and enthusiast programmers" title="profile for Alex W at Stack Overflow, Q&amp;A for professional and enthusiast programmers">
+						<img src="http://stackoverflow.com/users/flair/1399491.png" width="208" height="58" alt="profile for Alex W at Stack Overflow, Q&amp;A for professional and enthusiast programmers" title="profile for Alex W at Stack Overflow, Q&amp;A for professional and enthusiast programmers" class="img-responsive" />
 					</a>
 				</li>
 				<li>
 					<h5>StackExchange:</h5>
 					<a href="http://stackexchange.com/users/1477537">
-						<img src="http://stackexchange.com/users/flair/1477537.png" width="208" height="58" alt="profile for Alex W on Stack Exchange, a network of free, community-driven Q&amp;A sites" title="profile for Alex W on Stack Exchange, a network of free, community-driven Q&amp;A sites" />
+						<img src="http://stackexchange.com/users/flair/1477537.png" width="208" height="58" alt="profile for Alex W on Stack Exchange, a network of free, community-driven Q&amp;A sites" title="profile for Alex W on Stack Exchange, a network of free, community-driven Q&amp;A sites" class="img-responsive" />
 					</a>
 				</li>
 				<li>
 					<h5>LinkedIn:</h5>
 					<a href="https://www.linkedin.com/pub/alex-watson/28/994/a39">
-						<img src="https://static.licdn.com/scds/common/u/img/webpromo/btn_viewmy_120x33.png" width="120" height="33" border="0" alt="View Alex Watson's profile on LinkedIn">
+						<img src="https://static.licdn.com/scds/common/u/img/webpromo/btn_viewmy_120x33.png" width="120" height="33" border="0" alt="View Alex Watson's profile on LinkedIn" class="img-responsive" />
 					</a>
 				</li>
 				<li>
 					<h5>QuizUp:</h5>
 					<a href="https://www.quizup.com/profiles/363751268458073221" class="quiz-up">
 						<img src="data:image/png;base64,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
-" width="120" height="33" border="0" alt="View Alex Watson's QuizUp Profile">
+" width="120" height="33" border="0" alt="View Alex Watson's QuizUp Profile" class="img-responsive" />
 					</a>
 				</li>
 
