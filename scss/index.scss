@@ -1,0 +1,511 @@
+/* Reset styles */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+// HTML5 display-role reset for older browsers
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* Imports */
+@import url('https://fonts.googleapis.com/css?family=Muli');
+@import url('https://fonts.googleapis.com/css?family=Droid+Sans+Mono');
+
+/* Content styles */
+
+
+
+/* Colors */
+$black: #101010;
+$off-white: #F0F0F0;
+$orange: orange;
+$terminal-black: #101010;
+
+/* Font stack */
+$bash-font: 'Droid Sans Mono', sans-serif;
+$font-stack: Muli, sans-serif;
+/* Header 1 size */
+$h1-size: 50px;
+/* Header 2 size */
+$h2-size: 25px;
+
+
+/* Element styles */
+
+* {
+  &::selection {
+    background: orange; /* WebKit/Blink Browsers */
+  }
+  &::-moz-selection {
+    background: orange; /* Gecko Browsers */
+  }
+}
+* {
+  &::selection {
+    background: orange; /* WebKit/Blink Browsers */
+  }
+  &::-moz-selection {
+    background: orange; /* Gecko Browsers */
+  }
+}
+
+html,body {
+  height: 100%;
+}
+body {
+  font-family: $font-stack;
+  text-align: center;
+  
+  h1 {
+      font-size: $h1-size;
+      white-space:nowrap;
+      overflow:hidden;
+  }
+  h2 {
+    font-size: $h2-size;
+  }
+}
+
+/* Class styles */
+
+.black-white {
+  background: $black;
+  color: $off-white;
+}
+
+.bash-prompt {
+  font-size: 25px;
+  text-align: left;
+  display: block;
+  margin: 10px;
+}
+
+.bash-window {
+  background-color: $terminal-black;
+  font-family: $bash-font;
+  margin: 20px auto 0;
+  max-width: 90%;
+  border-radius: 15px;
+  padding-bottom: 15px;
+  
+  &.minimized {
+    padding-bottom: 0;
+  }
+  
+  .window-controls {
+    background: linear-gradient(#e8e6e8,#d3d1d3);
+    cursor: default;
+    text-align: left;
+    padding: 10px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    
+    .window-control {
+      background-color: white;
+      content: ' ';
+      cursor: pointer;
+      display: inline-block;
+      border-radius: 50%;
+      width: 10px;
+      height: 10px;
+      
+      
+      &.green,
+      &.yellow,
+      &.red {
+        user-select: none;
+      }
+      &.green {
+        background-color: #00cf4f;
+      }
+      &.red {
+        background-color: #ff625d;
+      }
+      &.yellow {
+        background-color: #ffc045;
+      }
+    }
+  }
+}
+
+.full-screen {
+  max-width: 100%;
+}
+
+.horizontal-center {
+    left: 0;
+    right: 0;
+    margin: auto;
+    text-align: center;
+}
+.hidden {
+  display: none;
+}
+.slide {
+  display: block;
+  width: 100% !important;
+  height: 125% !important;
+  content: ' ';
+  position: relative;
+}
+.text-orange {
+  color: orange;
+}
+.text-white {
+  color: white;
+}
+.text-center {
+  text-align: center;
+}
+.ti-cursor {
+  content: '\u2588' !important;
+}
+.vertical-center {
+    position: absolute;
+    top:50%;
+    transform: translateY(-150%);
+}
+
+/* Slide Styles */
+
+.slide-1 {
+  position: relative;
+  .mouse {
+      margin-top: 20px;
+      position: absolute;
+      bottom: 35%;
+      border: 2px solid black;
+      border-radius: 15px;
+      content: ' ';
+      display: block;
+      width: 22px;
+      height: 42px;
+      position: absolute;
+      right: 50%;
+      transform: translateX(50%);
+    .scroll-wheel {
+      opacity: 0;
+      animation: fingerScroll 1.5s infinite;
+      display: block;
+      background-color: black;
+      border: 2px solid black;
+      border-radius: 100%;
+      width: 0px;
+      height: 0px;
+      position: absolute;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+      top: 10px;
+    }
+    .text {
+      height: 110%;
+      display: block;
+      opacity: 0;
+      text-align: center;
+      font-size: 10px;
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -50px;
+      & {
+        opacity: 1;
+        transition: all 1s;
+        left: 0;
+        right: 0;
+        text-align: center;
+        margin: 0 auto;
+        display: block;
+        cursor: default;
+      }
+    }
+  }
+}
+
+.slide-2 {
+  
+  & .type-area {
+    white-space: nowrap;
+  }
+  & .bash-window > ul {
+    display:flex;
+    li {
+      flex: 50%;
+      text-align: left;
+      display: flex;
+      flex-direction: column;
+      h4 {
+        font-weight: bold;
+        font-size: 2em;
+      }
+      li {
+        list-style-type: disc;
+      }
+    }
+    ul {
+      list-style: outside;
+    }
+  }
+  ul.skills {
+    padding: 0 15px;
+    color: $off-white;
+    & li > ul:first-child {
+      padding-left: 10px;
+    }
+    & > li > h4,
+    & > li > ul {
+      display: none;
+    }
+    & span.ti-container {
+      display: inline;
+    }
+  }
+  .what-do-i-do {
+    display: inline-block;
+    margin: 0 auto;
+    opacity: 0;
+    
+    + p {
+      margin: 20px auto 40px;
+      max-width: 80%;
+    }
+  }
+}
+
+.slide-3 {
+  h1 {
+    font-size: 50px;
+    position: absolute;
+    bottom: 40%;
+    left: 0;
+    right: 0;
+  }
+  .social {
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    max-width: 90%;
+    position: absolute;
+    bottom: 30%;
+    a {
+      color: black;
+      text-decoration: none;
+      font-size: 4em;
+      opacity: 0;
+      padding: 0 10px;
+      &:hover {
+        color: orange;
+      }
+    }
+    a.email:hover:before {
+      content:"\f2b6" !important;
+      position: relative;
+      top: -5px;
+    }
+    a.stack-overflow:before {
+      position: relative;
+      top: -5px;
+    }
+  }
+}
+
+/* Footer */
+footer {
+  padding-bottom: 20px;
+  .coffee {
+    transition: all 1s;
+    &:hover {
+      color: orange;
+    }
+  }
+}
+
+/* Animations */
+
+.cursor-blink {
+  -ms-animation: cursorBlink steps(1,end) 1s infinite;
+  -moz-animation: cursorBlink steps(1,end) 1s infinite;
+  -webkit-animation: cursorBlink steps(1,end) 1s infinite;
+  animation: cursorBlink steps(1,end) 1s infinite;
+  border-right: .05em solid black;
+}
+
+.fade-in {
+  animation: fadeIn 3s forwards;
+}
+.fade-out {
+  animation: fadeOut 3s forwards;
+}
+
+.reveal-from-left {
+    animation: revealFromLeft;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+
+.slide-down {
+    animation: slideDown;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadeDown {
+  0% {
+    opacity: 0;
+    transform: translateY(0%);
+  }
+  100% {
+    opacity: 0.05;
+    transform: translateY(-150%);
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(-250%);
+  }
+  100% {
+    opacity: 0.05;
+    transform: translateY(-150%);
+  }
+}
+
+@keyframes fingerScroll {
+  0% {
+    opacity: 0;
+    top: 10px;
+  }
+  50% {
+    opacity: 1;
+    top: 15px;
+  }
+  100% {
+    opacity: 0;
+    top: 20px;
+  }
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+}
+
+@keyframes cursorBlink {
+    from, to { border-color: transparent }
+    50% { border-color: black }
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-50%);
+    opacity: 0;
+    top: 50%;
+  }
+
+  to {
+    transform: translateY(0%);
+    opacity: 1;
+    top: 60%;
+  }
+}
+
+@keyframes moveUp {
+  0% {
+    transform: translateY(150%);
+    opacity: 0.05;
+  }
+  100% {
+    transform: translateY(-500%);
+    opacity: 0;
+  }
+}
+
+@keyframes revealFromLeft {
+  from {
+    width: 0;
+    opacity: 0;
+  }
+  to {
+    width: 100%;
+    opacity: 1;
+  }
+}
+
+/* Media Queries - Mobile */
+
+@media all and (max-width: 500px) {
+  .slide-2 {
+    ul.skills {
+      display: block;
+      & > li {
+        display: block;
+      }
+    }
+  }
+}
+
+@media all and (max-width: 365px) {
+    .slide-3 {
+      & > h1 {
+        margin-bottom: 40px;
+      }
+    .social {
+      bottom: 23%;
+      line-height: 4em;
+    }
+  }
+}
+
