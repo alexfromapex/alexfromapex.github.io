@@ -1,8 +1,8 @@
 /* Change slide opacity during scroll */
-$(window).scroll(() => {
-    $(".slide-1").css("opacity", 1 - $(window).scrollTop() / (window.innerHeight/5));
-    $(".slide-2").css("opacity",$(window).scrollTop() / ($(".slide-2").offset().top-100));
-    $(".slide-3").css("opacity",$(window).scrollTop() / ($(".slide-3").offset().top+(window.innerHeight/2)));
+jQuery(window).scroll(() => {
+    jQuery(".slide-1").css("opacity", 1 - jQuery(window).scrollTop() / (window.innerHeight/5));
+    jQuery(".slide-2").css("opacity",jQuery(window).scrollTop() / (jQuery(".slide-2").offset().top-100));
+    jQuery(".slide-3").css("opacity",jQuery(window).scrollTop() / (jQuery(".slide-3").offset().top+(window.innerHeight/2)));
 });
 
 /* Hide scroll guide */
