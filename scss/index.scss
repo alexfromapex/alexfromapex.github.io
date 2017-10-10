@@ -484,7 +484,7 @@ footer {
   }
 }
 
-/* Mobile - Media Queries */
+/* Mobile - Media queries */
 
 @media all and (max-width: 500px) {
   .slide-2 {
@@ -497,13 +497,37 @@ footer {
   }
 }
 
-@media all and (max-width: 365px) and (orientation: portrait) {
+@media all and (max-width: 365px) {
     .slide-3 {
       & > h1 {
         margin-bottom: 40px;
       }
-    .social {
+    & > .social {
       bottom: 23%;
+      line-height: 4em;
+    }
+  }
+}
+
+@media all and (max-device-width: 365px) and (orientation: portrait) {
+    .slide-3 {
+      & > h1 {
+        margin-bottom: 40px;
+      }
+    & > .social {
+      bottom: 23%;
+      line-height: 4em;
+    }
+  }
+}
+
+@media all and (max-device-width: 365px) and (orientation: landscape) {
+    .slide-3 {
+      & > h1 {
+        margin-bottom: 40px;
+      }
+    & > .social {
+      bottom: 20%;
       line-height: 4em;
     }
   }
