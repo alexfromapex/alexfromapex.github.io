@@ -390,11 +390,9 @@ footer {
     .slide-2 ul.skills > li {
       display: block; } }
 
-@media all and (max-width: 365px) {
+@media all and (max-width: 365px) and (orientation: portrait) {
   .slide-3 > h1 {
     margin-bottom: 40px; }
   .slide-3 .social {
     bottom: 23%;
     line-height: 4em; } }
-
-
