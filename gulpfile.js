@@ -35,7 +35,7 @@ gulp.task('scss:build', () => {
     .pipe(sass().on('error', sass.logError))
     .pipe(gulp.dest('CSS'))
     .pipe(minifyCSS())
-    .pipe(rename({ extname: '.min.css' }))
+    .pipe(rename(/\.css$/,'.min.css'))
     .pipe(gulp.dest('CSS'));
 });
 

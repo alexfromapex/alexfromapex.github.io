@@ -263,7 +263,7 @@ body {
   .slide-3 .social a {
     color: black;
     text-decoration: none;
-    font-size: 4em;
+    font-size: 3em;
     opacity: 0;
     padding: 0 10px; }
     .slide-3 .social a:hover {
@@ -397,16 +397,18 @@ footer {
     bottom: 23%;
     line-height: 4em; } }
 
-@media all and (max-device-width: 365px) and (orientation: portrait) {
+@media all and (max-width: 365px) and (orientation: portrait) {
   .slide-3 > h1 {
     margin-bottom: 40px; }
   .slide-3 > .social {
     bottom: 23%;
-    line-height: 4em; } }
+    line-height: 4em; }
+    .slide-3 > .social > a {
+      font-size: 3em; } }
 
-@media all and (max-device-width: 365px) and (orientation: landscape) {
+@media all and (max-width: 568px) and (orientation: landscape) {
   .slide-3 > h1 {
     margin-bottom: 40px; }
   .slide-3 > .social {
-    bottom: 20%;
+    bottom: 30%;
     line-height: 4em; } }
