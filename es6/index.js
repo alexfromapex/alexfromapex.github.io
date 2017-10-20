@@ -47,7 +47,7 @@ let waypoint = new Waypoint({
 });
 
 /* Typing logic */
-let headline_finished = new Promise((resolve, reject) => {
+let headline_finished = new Promise(function (resolve, reject) {
     jQuery('.slide-2 h1.what-do-i-do').on('animationend webkitAnimationEnd MSAnimationEnd oAnimationEnd', () => {
         jQuery('.slide-2 h1.what-do-i-do').removeClass('type-animation');
         jQuery('.slide-2 .code-header').addClass('type-animation').removeClass('hidden');
