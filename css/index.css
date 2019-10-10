@@ -407,3 +407,8 @@ footer {
   .slide-3 > .social {
     bottom: 30%;
     line-height: 4em; } }
+
+/* Dark Mode */
+@media (prefers-color-scheme: dark) {
+  .bash-window .window-controls {
+    background: linear-gradient(#606060, #707070); } }

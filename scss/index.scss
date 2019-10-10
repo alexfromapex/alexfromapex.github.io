@@ -532,3 +532,15 @@ footer {
     }
   }
 }
+
+
+/* Dark Mode */
+$dark_gradient: linear-gradient(#606060,#707070);
+
+@media (prefers-color-scheme: dark) {
+  .bash-window {
+    .window-controls {
+      background: $dark_gradient;
+    }
+  }
+}

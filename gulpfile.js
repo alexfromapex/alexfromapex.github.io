@@ -10,15 +10,15 @@ var jshint = require('gulp-jshint');
 
 /* Run all tasks */
 gulp.task('default', () => {
-    let scss = gulp.watch('./scss/*.scss', ['scss:build']);
-    let es6 = gulp.watch('./es6/*.js', ['es6:build']);
+    let scss = gulp.watch('./scss/*.scss', gulp.series('scss:build'));
+    let es6 = gulp.watch('./es6/*.js', gulp.series('es6:build'));
 
     scss.on('change', () => {
-        gulp.start('es6:build');
+        gulp.series('es6:build');
     });
 
     es6.on('change', () => {
-        gulp.start('scss:build');
+        gulp.series('scss:build');
     });
 });
 
@@ -26,7 +26,7 @@ gulp.task('default', () => {
 
 /* Watch SASS for changes */
 gulp.task('scss:watch', () => {
-    gulp.watch('./scss/*.scss', ['scss:build']);
+    gulp.watch('./scss/*.scss', gulp.series('scss:build'));
 });
 
 /* Transpile SASS to CSS and minify */
@@ -43,7 +43,7 @@ gulp.task('scss:build', () => {
 
 /* Watch ES6 for changes */
 gulp.task('es6:watch', () => {
-    gulp.watch('./es6/*.js', ['es6:build']);
+    gulp.watch('./es6/*.js', gulp.series('es6:build'));
 });
 
 /* Transpile ES6 to ES5 and minify */
