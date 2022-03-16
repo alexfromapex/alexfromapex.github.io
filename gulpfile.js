@@ -1,12 +1,12 @@
 'use strict';
 
-var gulp = require('gulp');
-var sass = require('gulp-sass');
-var rename = require('gulp-regex-rename');
-var minifyCSS = require('gulp-clean-css');
-var babel = require('gulp-babel');
-var uglify = require('gulp-uglify');
-var jshint = require('gulp-jshint');
+const gulp = require('gulp');
+const sass = require('gulp-sass')(require('sass'));
+const rename = require('gulp-regex-rename');
+const minifyCSS = require('gulp-clean-css');
+const babel = require('gulp-babel');
+const uglify = require('gulp-uglify');
+const jshint = require('gulp-jshint');
 
 /* Run all tasks */
 gulp.task('default', () => {
@@ -51,7 +51,7 @@ gulp.task('es6:build', () => {
     return gulp.src('./es6/*.js')
     .pipe(jshint())
     .pipe(babel({
-      presets: ['es2015'],
+      presets: ['@babel/preset-env'],
       babelrc: false
     }))
     .pipe(gulp.dest('js'))

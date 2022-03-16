@@ -283,8 +283,12 @@ body {
   ul.skills {
     padding: 0 15px;
     color: $off-white;
-    & li > ul:first-child {
-      padding-left: 10px;
+    display: flex;
+    justify-content: space-around;
+    & > li {
+      flex-shrink: 1;
+      flex-grow: 1;
+      flex-basis: 100%;
     }
     & > li > h4,
     & > li > ul {

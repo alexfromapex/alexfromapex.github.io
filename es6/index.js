@@ -33,8 +33,18 @@ let waypoint = new Waypoint({
                         autoStart: false,
                         callback: () => {
                             jQuery('.ti-cursor').remove();
-                            jQuery('body > div.slide.slide-2.code-bg > div > ul > li:nth-child(2)').typeIt({ speed: 10, autoStart: false });
-                            jQuery('.ti-cursor').html('&#x258c;');
+                            jQuery('body > div.slide.slide-2.code-bg > div > ul > li:nth-child(2)').typeIt({
+                                speed: 10,
+                                autoStart: false,
+                                callback: function callback() {
+                                    jQuery('.ti-cursor').remove();
+                                    jQuery('body > div.slide.slide-2.code-bg > div > ul > li:nth-child(3)').typeIt({
+                                        speed: 10,
+                                        autoStart: false
+                                    });
+                                    jQuery('.ti-cursor').html('&#x258c;');
+                                }
+                            });
                         } });
                     jQuery('.ti-cursor').html('&#x258c;');
                 }
