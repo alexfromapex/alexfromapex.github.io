@@ -1,0 +1,462 @@
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css?family=Muli');
+@import url('https://fonts.googleapis.com/css?family=Droid+Sans+Mono');
+
+/* ─── Variables ─────────────────────────────────────────── */
+$black:           #101010;
+$off-white:       #F0F0F0;
+$orange:          orange;
+$terminal-black:  #101010;
+$bash-font:       'Droid Sans Mono', sans-serif;
+$font-stack:      Muli, sans-serif;
+
+/* ─── Base ──────────────────────────────────────────────── */
+html, body {
+  height: 100%;
+  font-family: $font-stack;
+  scroll-behavior: smooth;
+}
+
+*::selection      { background: $orange; }
+*::-moz-selection { background: $orange; }
+
+/* ─── Slides ────────────────────────────────────────────── */
+.slide {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+}
+
+/* ─── Slide 1 — Hero ────────────────────────────────────── */
+.slide-1 {
+  position: relative;
+
+  .mouse {
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 2px solid black;
+    border-radius: 15px;
+    width: 22px;
+    height: 42px;
+    border-color: var(--mouse-color) !important;
+
+    .scroll-wheel {
+      background-color: var(--mouse-color) !important; 
+      opacity: 0;
+      animation: fingerScroll 1.5s infinite;
+      display: block;
+      background-color: black;
+      border-radius: 100%;
+      width: 4px;
+      height: 4px;
+      position: absolute;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+      top: 10px;
+    }
+
+    .text {
+      color: var(--mouse-color) !important;
+      position: absolute;
+      bottom: -20px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 10px;
+      white-space: nowrap;
+      cursor: default;
+    }
+  }
+
+  h1 { font-size: clamp(2rem, 6vw, 4rem); }
+  h2 { font-size: clamp(1rem, 3vw, 1.75rem); }
+  h1, h2 { color: var(--color-heading); }
+}
+
+/* ─── Slide 2 — Skills ──────────────────────────────────── */
+.slide-2 {
+  color: $off-white;
+
+  h1.what-do-i-do {
+    font-size: clamp(1.8rem, 4vw, 3rem);
+    opacity: 0;
+  }
+
+  p { color: $off-white; }
+
+  ul.skills {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    // Only hide inner items, NOT the outer Bootstrap column <li> wrappers
+    h4,
+    & > li > ul > li {
+      opacity: 0;
+      transform: translateX(-6px);
+    }
+
+    h4.line-reveal,
+    & > li > ul > li.line-reveal {
+      animation: terminalLine 0.15s ease forwards;
+    }
+
+    & > li {
+      padding: 0 1rem;
+
+      h4 {
+        font-weight: bold;
+        font-size: 1.25rem;
+        color: $orange;
+        margin-bottom: 0.5rem;
+      }
+
+      ul {
+        list-style: disc;
+        padding-left: 1.2rem;
+        color: $off-white;
+
+        li { margin-bottom: 0.2rem; }
+      }
+    }
+  }
+}
+
+/* ─── Bash Window ───────────────────────────────────────── */
+.bash-window {
+  background-color: $terminal-black;
+  font-family: $bash-font;
+  border-radius: 12px;
+  position: relative;
+  transition: border-radius 0.3s ease;
+}
+
+.bash-window.full-screen {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  border-radius: 0 !important;
+  z-index: 9999 !important;
+  overflow-y: auto !important;
+  margin: 0 !important;
+}
+
+/* ─── Bash Body ─────────────────────────────────────────── */
+.bash-body {
+  overflow: hidden;
+  max-height: 1000px;
+  transition: max-height 0.3s ease;
+}
+
+.bash-window.collapsed .bash-body {
+  max-height: 0;
+}
+
+/* ─── Window Controls Bar ───────────────────────────────── */
+.window-controls {
+  background: linear-gradient(#e8e6e8, #d3d1d3);
+  padding: 8px 12px;
+  border-radius: 12px 12px 0 0;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+
+  .window-control {
+    display: inline-block;
+    border-radius: 50%;
+    width: 12px;
+    height: 12px;
+    margin-right: 4px;
+    cursor: pointer;
+    user-select: none;
+    flex-shrink: 0;
+
+    &.red    { background-color: #ff625d; }
+    &.yellow { background-color: #ffc045; }
+    &.green  { background-color: #00cf4f; }
+  }
+
+  .window-title {
+    font-family: $bash-font;
+    font-size: 0.75rem;
+    color: #555;
+    white-space: nowrap;
+    pointer-events: none;
+    user-select: none;
+  }
+}
+
+/* ─── Bash Prompt ───────────────────────────────────────── */
+.bash-prompt {
+  font-size: 1.1rem;
+  display: block;
+  font-family: $bash-font;
+}
+
+.text-orange { color: $orange !important; }
+
+/* ─── Terminal Cursor ───────────────────────────────────── */
+.terminal-cursor {
+  display: inline-block;
+  margin-left: 4px;
+  animation: cursorBlink 1s steps(1) infinite;
+  color: $off-white;
+}
+
+/* ─── Slide 3-projects — Projects ───────────────────────── */
+.slide-3-projects {
+  h1.projects-heading {
+    font-size: clamp(1.8rem, 4vw, 3rem);
+    color: var(--color-heading);
+  }
+
+  #projectsCarousel {
+    padding: 0 3rem;
+
+    .carousel-indicators {
+      position: static;
+      margin: 20px 0 0 0;
+      justify-content: center;
+    }
+
+    .carousel-control-prev,
+    .carousel-control-next {
+      width: 3rem;
+      top: 0;
+      bottom: auto; // let flexbox handle it
+      height: 100%; // only cover the image, not the caption below
+      align-items: center; // vertically center the chevron
+      display: flex;
+      opacity: 0.85;
+      transition: opacity 0.2s;
+
+      // Remove the default Bootstrap background gradient on the buttons
+      background: none;
+
+      &:hover { opacity: 1; }
+
+      // Remove any leftover icon styles
+      .carousel-control-prev-icon,
+      .carousel-control-next-icon { display: none; }
+    }
+  }
+
+  .carousel-img {
+    max-height: 55vh;
+    object-fit: cover;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: opacity 0.2s;
+
+    &:hover { opacity: 0.85; }
+  }
+
+  .carousel-text {
+    h5 {
+      font-size: 1.3rem;
+      font-weight: bold;
+      color: $orange;
+    }
+    p {
+      color: var(--color-text);
+      font-size: 0.95rem;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+  }
+
+  .carousel-control-prev,
+  .carousel-control-next {
+    // Override the Bootstrap SVG icon color to orange
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+      filter: none;
+      background-image: none;
+      position: relative;
+
+      &::after {
+        font-family: 'Font Awesome 6 Free';
+        font-weight: 900;
+        font-size: 1.75rem;
+        color: $orange;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+
+    .carousel-control-prev-icon::after { content: '\f053'; } // fa-chevron-left
+    .carousel-control-next-icon::after { content: '\f054'; } // fa-chevron-right
+  }
+
+}
+
+/* ─── Screenshot Modal ───────────────────────────────────── */
+.modal-screenshot {
+  border-radius: 0 0 4px 4px;
+  display: block;
+}
+
+/* ─── Slide 4 — Contact ─────────────────────────────────── */
+.slide-4 {
+  .contact {
+    h1 {
+      font-size: clamp(2rem, 5vw, 3rem);
+      color: var(--color-heading);
+    }
+
+    a {
+      font-size: 2.5rem;
+      text-decoration: none;
+      opacity: 0;
+      color: var(--color-link);
+      transition: color 0.3s;
+
+      &:hover { color: var(--color-link-hover); }
+    }
+
+    // E-mail hover
+    a.email {
+      transition: color 0.3s, transform 0.3s;
+
+      &::before {
+        transition: content 0s; // doesn't animate, but needed for the swap
+      }
+
+      &:hover::before {
+        // fa-envelope-open unicode
+        content: '\f2b6';
+      }
+    }
+
+  }
+}
+
+/* ─── Footer ────────────────────────────────────────────── */
+footer {
+  .coffee {
+    transition: color 0.3s;
+    &:hover { color: $orange; }
+  }
+}
+
+/* ─── Intersection Observer — .in-view triggers ─────────── */
+.observe.in-view {
+  h1.what-do-i-do {
+    animation: revealFromLeft 1.2s forwards;
+  }
+
+  .contact a {
+    color: var(--color-link);
+    animation: fadeInUp 0.6s forwards;
+    @for $i from 1 through 5 {
+      &:nth-child(#{$i}) { animation-delay: #{$i * 0.15}s; }
+    }
+
+    &:hover {
+      color: $orange !important;
+    }
+  }
+}
+
+/* ─── Animations ────────────────────────────────────────── */
+.reveal-from-left {
+  animation: revealFromLeft 1.5s forwards;
+}
+
+.slide-down {
+  animation: slideDown 1.5s forwards;
+  opacity: 0;
+}
+
+.fade-in  { animation: fadeIn 3s forwards; }
+.fade-out { animation: fadeOut 3s forwards; }
+
+@keyframes revealFromLeft {
+  from { width: 0; opacity: 0; overflow: hidden; white-space: nowrap; }
+  to   { width: 100%; opacity: 1; overflow: hidden; white-space: nowrap; }
+}
+
+@keyframes slideDown {
+  from { transform: translateY(-20px); opacity: 0; }
+  to   { transform: translateY(0);     opacity: 1; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to   { opacity: 0; }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fingerScroll {
+  0%   { opacity: 0; top: 10px; }
+  50%  { opacity: 1; top: 15px; }
+  100% { opacity: 0; top: 20px; }
+}
+
+@keyframes terminalLine {
+  from { opacity: 0; transform: translateX(-1px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes cursorBlink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+
+/* ─── Dark mode ─────────────────────────────────────────── */
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #000;
+  }
+  .window-controls {
+    background: linear-gradient(#606060, #707070);
+
+    .window-title { color: #ccc; }
+  }
+
+  .slide-1 .mouse {
+    border-color: white !important;
+
+    .scroll-wheel { background-color: white !important; }
+    .text         { color: white !important; }
+  }
+
+  .slide-4 .contact a { color: $off-white; }
+}
+
+/* ─── Light mode ────────────────────────────────────────── */
+@media (prefers-color-scheme: light) {
+  .slide-1 .mouse {
+    border-color: black !important;
+
+    .scroll-wheel { background-color: black !important; }
+    .text         { color: black !important; }
+  }
+
+  .slide2 {
+    h1 {
+      color: black !important;
+    }
+  }
+  .slide-4 .contact a.fa {
+    color: black;
+    &:hover {
+      color: $orange;
+    }
+  }
+}
