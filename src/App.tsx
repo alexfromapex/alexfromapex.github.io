@@ -141,7 +141,7 @@ function App() {
       <div className="slide slide-1 d-flex align-items-center justify-content-center observe">
         <div className="text-center">
           <h1 className="reveal-from-left">Alex Watson</h1>
-          <h2 className="slide-down mt-3">Software &amp; AI Engineer</h2>
+          <h2 className="slide-down mt-3">Applied AI/ML Engineer</h2>
         </div>
         <div className="mouse fade-in">
           <span className="scroll-wheel"></span>
