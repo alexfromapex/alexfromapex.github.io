@@ -295,17 +295,17 @@ function App() {
               {/* Metrics in MLFlow */}
               <div className="carousel-item">
                 <img
-                  src="/assets/mlflow-screenshot.png"
+                  src="/assets/mlflow-metrics-screenshot.png"
                   className="d-block w-100 carousel-img"
                   alt="Tracking MLFlow Metrics"
                   data-bs-toggle="modal"
                   data-bs-target="#screenshotModal"
-                  data-bs-img="/assets/mlflow-screenshot.png"
+                  data-bs-img="/assets/mlflow-metrics-screenshot.png"
                   data-bs-title="Tracking MLFlow Metrics"
                 />
                 <div className="carousel-text text-center mt-3">
                   <h5>Tracking MLFlow Metrics</h5>
-                  <p>While training the model, I was able to capture metrics in MLFlow for the training runs.</p>
+                  <p>While training the Alpaca dataset model, I capture metrics in MLFlow 3.10.1 for the experiment training run.</p>
                 </div>
               </div>
 
