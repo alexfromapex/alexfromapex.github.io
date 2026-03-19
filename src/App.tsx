@@ -278,17 +278,17 @@ function App() {
               {/* Pre-training LLM */}
               <div className="carousel-item">
                 <img
-                  src="/assets/pretraining-screenshot.png"
+                  src="/assets/alex-alpaca-screenshot.png"
                   className="d-block w-100 carousel-img"
                   alt="Pretraining"
                   data-bs-toggle="modal"
                   data-bs-target="#screenshotModal"
-                  data-bs-img="/assets/pretraining-screenshot.png"
+                  data-bs-img="/assets/alex-alpaca-screenshot.png"
                   data-bs-title="Pretraining"
                 />
                 <div className="carousel-text text-center mt-3">
                   <h5>Pre-training an LLM from scratch</h5>
-                  <p>Using PyTorch with MPS on my Apple M3 Max with 128GB RAM, I was able to train a causal text-generation LLM using the Odyssey by Homer as the dataset. The model converged with mild success, as evidenced by the monotonically decreasing training loss and coherent-looking gibberish output.</p>
+                  <p>Using PyTorch with MPS on my Apple M3 Max with 128GB RAM, I have trained a causal text-generation LLM using the Tatsu Alpaca dataset from HuggingFace with TikToken o200k_base byte-pair encoding. The model architecture consists of RMSNorm, SwiGLU, RoPE, and Group Query Attention. The model converged and produces decent semi-nonsensical output after 400 training steps.</p>
                 </div>
               </div>
 
