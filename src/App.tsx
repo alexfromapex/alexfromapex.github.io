@@ -288,7 +288,7 @@ function App() {
                 />
                 <div className="carousel-text text-center mt-3">
                   <h5>Pre-training an LLM from scratch</h5>
-                  <p>Using PyTorch with MPS on my Apple M3 Max with 128GB RAM, I have trained a causal text-generation LLM using the Tatsu Alpaca dataset from HuggingFace with TikToken o200k_base byte-pair encoding. The model architecture consists of RMSNorm, SwiGLU, RoPE, and Group Query Attention. The model converged and produces decent semi-nonsensical output after 400 training steps.</p>
+                  <p>Using PyTorch with MPS on my Apple M3 Max with 128GB RAM, I have trained a ~27M parameter causal text-generation LLM using the Tatsu Alpaca dataset from HuggingFace with TikToken o200k_base byte-pair encoding. The model architecture consists of RMSNorm, SwiGLU, RoPE, and Group Query Attention. The model converged well and has a perplexity of ~8.55 and answers questions semi-coherently.</p>
                 </div>
               </div>
 
