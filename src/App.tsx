@@ -326,6 +326,23 @@ function App() {
                 </div>
               </div>
 
+              {/* World HUD */}
+              <div className="carousel-item">
+                <img
+                  src="/assets/world-hud.png"
+                  className="d-block w-100 carousel-img"
+                  alt="World HUD"
+                  data-bs-toggle="modal"
+                  data-bs-target="#screenshotModal"
+                  data-bs-img="/assets/world-hud.png"
+                  data-bs-title="World HUD"
+                />
+                <div className="carousel-text text-center mt-3">
+                  <h5>Python World HUD</h5>
+                  <p>Using GEBCO elevation data of Earth, I created a 3D model in Blender.  I used Python to generate country borders and names and exported the 3D model data to a GLB file.  I imported the GLB in PyVista and VTK in Python and added live aircraft ADS-B and marine datasets, to create a 3D visually interactive interface.  The subsolar point of the sun is accurately calculated using Python's ephem library and displayed in PyVista on the interactive map.</p>
+                </div>
+              </div>
+
               {/* Open WebUI Image Search */}
               <div className="carousel-item">
                 <img
@@ -351,6 +368,7 @@ function App() {
               <button type="button" data-bs-target="#projectsCarousel" data-bs-slide-to="2" />
               <button type="button" data-bs-target="#projectsCarousel" data-bs-slide-to="3" />
               <button type="button" data-bs-target="#projectsCarousel" data-bs-slide-to="4" />
+              <button type="button" data-bs-target="#projectsCarousel" data-bs-slide-to="5" />
             </div>
 
             <button className="carousel-control-prev" type="button" data-bs-target="#projectsCarousel" data-bs-slide="prev">
