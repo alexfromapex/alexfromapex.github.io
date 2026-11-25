@@ -409,6 +409,7 @@ function App() {
             <a className="fa fa-envelope email" href="mailto:alexfromapex@gmail.com" title="E-mail"></a>
             <a className="fa-brands fa-linkedin linked-in" href="https://www.linkedin.com/in/alexwats0n/" title="LinkedIn" target="_blank" rel="noreferrer"></a>
             <a className="fa-brands fa-stack-overflow stack-overflow" href="https://stackoverflow.com/users/1399491/alex-w?tab=profile" title="StackOverflow" target="_blank" rel="noreferrer"></a>
+            <a className="fa-brands fa-hugging-face hugging-face" href="https://www.huggingface.co/alexfromapex" title="HuggingFace" target="_blank" rel="noreferrer"></a>
           </div>
         </div>
       </div>
